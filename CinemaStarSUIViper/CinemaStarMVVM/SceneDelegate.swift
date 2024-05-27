@@ -1,7 +1,7 @@
 // SceneDelegate.swift
 // Copyright © RoadMap. All rights reserved.
 
-import UIKit
+import SwiftUI
 
 /// SceneDelegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
