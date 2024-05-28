@@ -17,7 +17,7 @@ struct DocumentationDTO: Codable {
 }
 
 /// Модель для PosterDTO
-struct PosterDTO: Codable {
+struct PosterDTO: Codable, Hashable {
     let url: String?
 }
 
