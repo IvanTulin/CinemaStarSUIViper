@@ -6,15 +6,24 @@ import Foundation
 import SwiftUI
 
 ///
-protocol ListFilmsInteractorOutput: AnyObject {
+protocol ListFilmsPresenterProtocol: AnyObject {
     func fetchFilms()
+    func didLoadFilm(films: [FilmsCommonInfo])
 }
 
 ///
-final class ListFilmsPresenter: ListFilmsInteractorOutput, ObservableObject {
-    //    @ObservedObject private var interactor = ListFilmsInteractor()
+final class ListFilmsPresenter: ObservableObject {
     @Published private var interactor: ListFilmsInteractor?
-    @Published var films: [FilmsCommonInfo]?
+//    @Published var selectedFilmId: String?
+//    @Published var isShowDetailView = false
+
+    private let filmsSubject = PassthroughSubject<[FilmsCommonInfo], Never>()
+
+    var filmsPublisher: AnyPublisher<[FilmsCommonInfo], Never> {
+        filmsSubject.eraseToAnyPublisher()
+    }
+
+    var listFilmView: ListFilmsView?
 
     private let router: ListFilmsRoutingProtocol
     private var cancellable: Set<AnyCancellable> = []
@@ -22,25 +31,24 @@ final class ListFilmsPresenter: ListFilmsInteractorOutput, ObservableObject {
     init(interactor: ListFilmsInteractor, router: ListFilmsRoutingProtocol) {
         self.router = router
         self.interactor = interactor
-
-        interactor.$films
-            .receive(on: RunLoop.main)
-            .sink { [weak self] films in
-                self?.films = films
-            }
-            .store(in: &cancellable)
     }
 
-//    init() {
-//        interactor.$films
-//            .receive(on: RunLoop.main)
-//            .sink { [weak self] films in
-//                self?.films = films
-//            }
-//            .store(in: &cancellable)
+//    func showDetailsView(id: String) {
+//        selectedFilmId = id
+//        isShowDetailView = true
 //    }
+}
 
+extension ListFilmsPresenter: ListFilmsPresenterProtocol {
     func fetchFilms() {
         interactor?.fetchFilms()
+    }
+
+    func didLoadFilm(films: [FilmsCommonInfo]) {
+        filmsSubject.send(films)
+    }
+
+    func didSelectFilm(with filmId: Binding<String?>) {
+        router.navigateToFilmDetails(withID: filmId)
     }
 }

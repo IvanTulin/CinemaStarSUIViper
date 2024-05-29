@@ -1,6 +1,7 @@
 // ListFilmsView.swift
 // Copyright © RoadMap. All rights reserved.
 
+import Combine
 import SwiftUI
 
 ///
@@ -30,17 +31,23 @@ struct ListFilmsView: View {
         }
         .onAppear {
             presenter.fetchFilms()
+            // presenter.viewDidLoad()
         }
+        .onReceive(presenter.filmsPublisher, perform: { films in
+            self.films = films
+        })
     }
 
-//    @StateObject private var presenter = ListFilmsPresenter()
     @StateObject private var presenter: ListFilmsPresenter
     @State var selectedFilmId: String?
     @State var isShowDetailView = false
+    @State var films: [FilmsCommonInfo]?
 
     init(presenter: ListFilmsPresenter) {
         _presenter = StateObject(wrappedValue: presenter)
     }
+
+    private var cancellable: Set<AnyCancellable> = []
 
     private var titleView: some View {
         HStack {
@@ -54,12 +61,17 @@ struct ListFilmsView: View {
     private var filmListView: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-                if let films = presenter.films {
+                // if let films = presenter.films {
+                if let films = films {
                     ForEach(films, id: \.id) { film in
                         NavigationLink(
                             destination: DetailsFilmView(id: $selectedFilmId),
                             isActive: $isShowDetailView
                         ) {
+//                        NavigationLink(
+//                            destination: DetailsFilmView(id: $presenter.selectedFilmId),
+//                            isActive: $presenter.isShowDetailView
+//                        ) {
                             VStack {
                                 AsyncImage(url: URL(string: film.poster)) { poster in
                                     poster
@@ -81,7 +93,9 @@ struct ListFilmsView: View {
                             }
                             .onTapGesture {
                                 selectedFilmId = String(film.id)
-                                isShowDetailView.toggle()
+                                presenter.didSelectFilm(with: $selectedFilmId)
+                                // presenter.didSelectFilm(with: String(film.id))
+                                // isShowDetailView.toggle()
                             }
                             .background(Color.clear) // Фон для каждой ячейки
                             .cornerRadius(10) // Закругление углов ячейки

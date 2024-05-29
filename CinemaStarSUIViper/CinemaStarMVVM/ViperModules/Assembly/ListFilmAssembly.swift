@@ -11,6 +11,8 @@ class ListFilmsAssembly {
         let presenter = ListFilmsPresenter(interactor: interactor, router: router)
         let view = ListFilmsView(presenter: presenter)
         router.view = view
+        presenter.listFilmView = view
+        interactor.presenter = presenter
         return view
     }
 }

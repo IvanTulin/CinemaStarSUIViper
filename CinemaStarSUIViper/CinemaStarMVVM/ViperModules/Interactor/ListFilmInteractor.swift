@@ -5,14 +5,15 @@ import Combine
 import Foundation
 
 // Interactor
-protocol ListFilmsInteractorInput {
+protocol ListFilmsInteractorProtocol {
     func fetchFilms()
 }
 
-class ListFilmsInteractor: ListFilmsInteractorInput, ObservableObject {
+///
+class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
     @Published var films: [FilmsCommonInfo] = []
 
-    weak var presenter: ListFilmsInteractorOutput?
+    weak var presenter: ListFilmsPresenterProtocol?
     private var networkService = NetworkService2()
     private var cancellable: Set<AnyCancellable> = []
 
@@ -27,7 +28,7 @@ class ListFilmsInteractor: ListFilmsInteractorInput, ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] film in
-                self?.films = film
+                self?.presenter?.didLoadFilm(films: film)
             }
             .store(in: &cancellable)
     }
