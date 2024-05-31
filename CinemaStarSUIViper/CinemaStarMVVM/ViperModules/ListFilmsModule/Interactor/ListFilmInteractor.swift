@@ -11,8 +11,6 @@ protocol ListFilmsInteractorProtocol {
 
 ///
 class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
-    @Published var films: [FilmsCommonInfo] = []
-
     weak var presenter: ListFilmsPresenterProtocol?
     private var networkService = NetworkService2()
     private var cancellable: Set<AnyCancellable> = []
@@ -25,6 +23,9 @@ class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
                     // Обработка ошибок, возможно уведомление Presenter
                     print(error.localizedDescription)
                 case .finished:
+//                    DispatchQueue.main.async {
+//                        self.presenter?.isLoading = false // Данные загружены, останавливаем Шимер
+//                    }
                     break
                 }
             } receiveValue: { [weak self] film in

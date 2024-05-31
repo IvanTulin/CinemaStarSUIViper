@@ -9,22 +9,20 @@ import SwiftUI
 protocol ListFilmsPresenterProtocol: AnyObject {
     func fetchFilms()
     func didLoadFilm(films: [FilmsCommonInfo])
+    // var isLoading: Bool { get set }
 }
 
 ///
 final class ListFilmsPresenter: ObservableObject {
     @Published private var interactor: ListFilmsInteractor?
-//    @Published var selectedFilmId: String?
-//    @Published var isShowDetailView = false
+    // @Published var isLoading = true
 
-    private let filmsSubject = PassthroughSubject<[FilmsCommonInfo], Never>()
-
+    var listFilmView: ListFilmsView?
     var filmsPublisher: AnyPublisher<[FilmsCommonInfo], Never> {
         filmsSubject.eraseToAnyPublisher()
     }
 
-    var listFilmView: ListFilmsView?
-
+    private let filmsSubject = PassthroughSubject<[FilmsCommonInfo], Never>()
     private let router: ListFilmsRoutingProtocol
     private var cancellable: Set<AnyCancellable> = []
 
@@ -32,15 +30,11 @@ final class ListFilmsPresenter: ObservableObject {
         self.router = router
         self.interactor = interactor
     }
-
-//    func showDetailsView(id: String) {
-//        selectedFilmId = id
-//        isShowDetailView = true
-//    }
 }
 
 extension ListFilmsPresenter: ListFilmsPresenterProtocol {
     func fetchFilms() {
+        // isLoading = true
         interactor?.fetchFilms()
     }
 

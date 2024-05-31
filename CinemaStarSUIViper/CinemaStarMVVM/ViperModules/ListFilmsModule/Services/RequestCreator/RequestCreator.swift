@@ -20,7 +20,7 @@ final class RequestCreator {
 
         guard let url = component.url else { return nil }
         var request = URLRequest(url: url)
-        request.setValue(Constants.myToken, forHTTPHeaderField: "X-API-KEY")
+        request.setValue(Constants.ninaToken, forHTTPHeaderField: "X-API-KEY")
         return request
     }
 
@@ -32,7 +32,7 @@ final class RequestCreator {
 
         guard let url = component.url else { return nil }
         var request = URLRequest(url: url)
-        request.setValue(Constants.myToken, forHTTPHeaderField: "X-API-KEY")
+        request.setValue(Constants.ninaToken, forHTTPHeaderField: "X-API-KEY")
         return request
     }
 

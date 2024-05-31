@@ -25,4 +25,17 @@ final class NetworkService2: NetworkServiceProtocol2 {
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
+
+    func fetchDetailsFilm(id: String) -> AnyPublisher<DetailsFilmCommonInfo, Error> {
+        guard let urlRequest = requestCreator.createDetailsFilmRequest(id: id) else {
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
+
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .map(\.data)
+            .decode(type: DetailsFilmDTO.self, decoder: JSONDecoder())
+            .map { DetailsFilmCommonInfo(dto: $0) }
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
 }

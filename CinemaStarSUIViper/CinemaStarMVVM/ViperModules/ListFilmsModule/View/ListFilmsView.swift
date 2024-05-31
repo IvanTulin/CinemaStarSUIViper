@@ -64,44 +64,47 @@ struct ListFilmsView: View {
                 // if let films = presenter.films {
                 if let films = films {
                     ForEach(films, id: \.id) { film in
-                        NavigationLink(
-                            destination: DetailsFilmView(id: $selectedFilmId),
-                            isActive: $isShowDetailView
-                        ) {
+//                        NavigationLink(
+//                            destination: DetailsFilmView(id: $selectedFilmId),
+//                            isActive: $isShowDetailView
+//                        ) {
 //                        NavigationLink(
 //                            destination: DetailsFilmView(id: $presenter.selectedFilmId),
 //                            isActive: $presenter.isShowDetailView
 //                        ) {
+                        VStack {
+                            AsyncImage(url: URL(string: film.poster)) { poster in
+                                poster
+                                    .resizable()
+                                    .frame(width: 170, height: 200)
+                                    .aspectRatio(contentMode: .fill)
+                                    .cornerRadius(8)
+                            } placeholder: {
+                                // ProgressView()
+                                ShimmerPlaceholderView()
+                                    .modifier(ShimmerEffect())
+                            }
                             VStack {
-                                AsyncImage(url: URL(string: film.poster)) { poster in
-                                    poster
-                                        .resizable()
-                                        .frame(width: 170, height: 200)
-                                        .aspectRatio(contentMode: .fill)
-                                        .cornerRadius(8)
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                VStack {
-                                    Text(film.name)
-                                        .frame(width: 150, alignment: .leading)
-                                        .foregroundStyle(.white)
-                                    Text("⭐️ \(String(format: "%.1f", film.rating))")
-                                        .foregroundStyle(.white)
-                                        .frame(width: 150, alignment: .leading)
-                                }
+                                Text(film.name)
+                                    .frame(width: 150, alignment: .leading)
+                                    .foregroundStyle(.white)
+                                Text("⭐️ \(String(format: "%.1f", film.rating))")
+                                    .foregroundStyle(.white)
+                                    .frame(width: 150, alignment: .leading)
                             }
-                            .onTapGesture {
-                                selectedFilmId = String(film.id)
-                                presenter.didSelectFilm(with: $selectedFilmId)
-                                // presenter.didSelectFilm(with: String(film.id))
-                                // isShowDetailView.toggle()
-                            }
-                            .background(Color.clear) // Фон для каждой ячейки
-                            .cornerRadius(10) // Закругление углов ячейки
-                            .shadow(radius: 5) // Добавление тени для ячейки
-                            .padding(.vertical)
                         }
+                        .onTapGesture {
+                            // presenter.selectedFilmId = String(film.id)
+                            selectedFilmId = String(film.id)
+                            presenter.didSelectFilm(with: $selectedFilmId)
+                            // presenter.didSelectFilm(with: String(film.id))
+                            // presenter.isShowDetailView.toggle()
+                        }
+                        .background(Color.clear) // Фон для каждой ячейки
+                        .cornerRadius(10) // Закругление углов ячейки
+                        .shadow(radius: 5) // Добавление тени для ячейки
+                        .padding(.vertical)
+                        // }
                     }
                 }
             }
