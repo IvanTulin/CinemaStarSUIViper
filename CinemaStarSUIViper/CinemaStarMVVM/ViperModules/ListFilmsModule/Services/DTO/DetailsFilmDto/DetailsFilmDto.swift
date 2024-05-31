@@ -24,7 +24,7 @@ struct CountryDTO: Codable {
 }
 
 /// Контейнер для persons
-struct PersonDTO: Codable {
+struct PersonDTO: Codable, Hashable {
     let photo: String?
     let name: String?
 }
@@ -36,7 +36,7 @@ struct SpokenLanguageDTO: Codable {
 }
 
 /// Контейнер для similarMovies
-struct SimilarMovieDTO: Codable {
+struct SimilarMovieDTO: Codable, Hashable {
     let name: String?
     let poster: PosterDTO?
 }

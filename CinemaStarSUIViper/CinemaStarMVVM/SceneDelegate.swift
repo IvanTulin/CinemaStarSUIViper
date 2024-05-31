@@ -14,7 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options _: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        creatScreen(windowScene)
+        let window = UIWindow(windowScene: windowScene)
+        let contentView = ListFilmsAssembly.assemble()
+
+        window.rootViewController = UIHostingController(rootView: contentView)
+        self.window = window
+        window.makeKeyAndVisible()
+
+        // creatScreen(windowScene)
     }
 
     func creatScreen(_ windowScene: UIWindowScene) {

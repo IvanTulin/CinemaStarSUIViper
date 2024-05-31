@@ -16,15 +16,15 @@ protocol ListFilmViewModelProtocol {
     var state: StateView { get set }
 }
 
-final class ListFilmViewModel: ListFilmViewModelProtocol {
+final class ListFilmViewModel: ObservableObject, ListFilmViewModelProtocol {
     // MARK: - Puplic Properties
 
-    var updateView: ((StateView) -> ())?
-    var networkService: NetworkServiceProtocol?
-    var filmsNetwork: [FilmsCommonInfo]?
+    @Published var updateView: ((StateView) -> ())?
+    @Published var networkService: NetworkServiceProtocol?
+    @Published var filmsNetwork: [FilmsCommonInfo]?
     weak var listFilmsCoordinator: ListFilmsCoordinator?
 
-    var state: StateView = .initial {
+    @Published var state: StateView = .initial {
         didSet {
             updateView?(state)
         }
