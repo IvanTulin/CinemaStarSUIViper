@@ -35,6 +35,7 @@ struct ListFilmsView: View {
         }
         .onReceive(presenter.filmsPublisher, perform: { films in
             self.films = films
+
         })
     }
 
@@ -64,14 +65,6 @@ struct ListFilmsView: View {
                 // if let films = presenter.films {
                 if let films = films {
                     ForEach(films, id: \.id) { film in
-//                        NavigationLink(
-//                            destination: DetailsFilmView(id: $selectedFilmId),
-//                            isActive: $isShowDetailView
-//                        ) {
-//                        NavigationLink(
-//                            destination: DetailsFilmView(id: $presenter.selectedFilmId),
-//                            isActive: $presenter.isShowDetailView
-//                        ) {
                         VStack {
                             AsyncImage(url: URL(string: film.poster)) { poster in
                                 poster
