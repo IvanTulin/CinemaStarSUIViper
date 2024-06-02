@@ -38,7 +38,7 @@ class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
                     self.presenter?.didLoadFilm(films: cinemaCoreData)
                 }
 
-                //self.presenter?.didLoadFilm(films: cinemaCoreData)
+                // self.presenter?.didLoadFilm(films: cinemaCoreData)
                 // self.presenter?.didLoadFilm(films: film)
             }
             .store(in: &cancellable)
