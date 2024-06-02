@@ -17,7 +17,7 @@ final class ListFilmsPresenter: ObservableObject {
     @Published private var interactor: ListFilmsInteractor?
     // @Published var isLoading = true
 
-    var films: [FilmsCommonInfo]?
+    @Published var films: [FilmsCommonInfo]?
     var listFilmView: ListFilmsView?
     var filmsPublisher: AnyPublisher<[FilmsCommonInfo], Never> {
         filmsSubject.eraseToAnyPublisher()
