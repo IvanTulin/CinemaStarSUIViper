@@ -3,6 +3,8 @@
 
 import Foundation
 
+// "https://api.kinopoisk.dev/v1.4/movie/search?X-API-KEY=HN22RMS-ZDXMNWJ-H7FY4Y5-W90A18G&query=История
+
 final class RequestCreator {
     private enum Constants {
         static let scheme = "https"

@@ -45,31 +45,4 @@ class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
     }
 }
 
-extension ListFilmsInteractor {
-//    func saveFilmsToCache(_ films: [FilmsCommonInfo]) {
-//            let context = CoreDataManager.shared.context
-//            films.forEach { filmInfo in
-//                let filmEntity = Film(context: context)
-//                filmEntity.id = Int64(filmInfo.id)
-//                filmEntity.poster = filmInfo.poster
-//                filmEntity.name = filmInfo.name
-//                filmEntity.rating = filmInfo.rating
-//            }
-//            do {
-//                try context.save()
-//            } catch {
-//                print("Failed to save films to cache: \(error)")
-//            }
-//        }
-//
-//        func fetchFilmsFromCache() -> [FilmsCommonInfo] {
-//            let request: NSFetchRequest<Film> = Film.fetchRequest()
-//            do {
-//                let filmEntities = try CoreDataManager.shared.context.fetch(request)
-//                return filmEntities.map { FilmsCommonInfo(dto: $0.toDocumentationDTO()) }
-//            } catch {
-//                print("Failed to fetch films from cache: \(error)")
-//                return []
-//            }
-//        }
-}
+extension ListFilmsInteractor {}
