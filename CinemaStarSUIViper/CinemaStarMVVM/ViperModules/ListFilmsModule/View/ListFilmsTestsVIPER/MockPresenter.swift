@@ -1,8 +1,8 @@
 // MockPresenter.swift
 // Copyright © RoadMap. All rights reserved.
 
-@testable import CinemaStarMVVM
-import Foundation
+import Combine
+import SwiftUI
 
 class MockPresenter: ListFilmsPresenterProtocol {
     @Published var films: [FilmsCommonInfo] = []

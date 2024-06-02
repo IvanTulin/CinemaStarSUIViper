@@ -1,11 +1,10 @@
-// MockNetworkService.swift
+// MockNetworkService2.swift
 // Copyright © RoadMap. All rights reserved.
 
-@testable import CinemaStarMVVM
 import Combine
 import Foundation
 
-class MockNetworkService: NetworkServiceProtocol2 {
+class MockNetworkService2: NetworkServiceProtocol2 {
     var fetchFilmsResult: Result<[FilmsCommonInfo], Error>?
 
     func fetchFilms() -> AnyPublisher<[FilmsCommonInfo], Error> {
