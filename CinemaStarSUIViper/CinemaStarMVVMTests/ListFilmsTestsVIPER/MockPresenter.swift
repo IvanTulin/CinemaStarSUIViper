@@ -7,10 +7,9 @@ import Foundation
 class MockPresenter: ListFilmsPresenterProtocol {
     @Published var films: [FilmsCommonInfo] = []
     @Published var error: Error?
-    
+
     var didLoadFilmCalled = false
     var didFailWithErrorCalled = false
-    
 
     func didLoadFilm(films: [FilmsCommonInfo]) {
         didLoadFilmCalled = true
