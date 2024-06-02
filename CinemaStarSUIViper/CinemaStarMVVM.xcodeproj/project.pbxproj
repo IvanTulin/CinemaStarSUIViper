@@ -33,6 +33,7 @@
 		BA9E13CB2BDAB79D00AC0DC7 /* DetailsFilmResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9E13CA2BDAB79D00AC0DC7 /* DetailsFilmResource.swift */; };
 		BA9E13CD2BDAB87100AC0DC7 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9E13CC2BDAB87100AC0DC7 /* NetworkRequest.swift */; };
 		BA9E13CF2BDABDB300AC0DC7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9E13CE2BDABDB300AC0DC7 /* APIRequest.swift */; };
+		BAA276292C0CFE6600C50CCB /* ListFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B4272C0CE8AC009B136E /* ListFilmsTests.swift */; };
 		BAA7E8C62C0623C900A9BBEF /* ListFilmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8C52C0623C900A9BBEF /* ListFilmPresenter.swift */; };
 		BAA7E8C82C06264000A9BBEF /* ListFilmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8C72C06264000A9BBEF /* ListFilmInteractor.swift */; };
 		BAA7E8CB2C062AF100A9BBEF /* NetworkService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8CA2C062AF100A9BBEF /* NetworkService2.swift */; };
@@ -69,7 +70,6 @@
 		BAE4B41E2C0CE5E3009B136E /* MockPresenter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B41D2C0CE5E3009B136E /* MockPresenter2.swift */; };
 		BAE4B4202C0CE612009B136E /* MockInteractor2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B41F2C0CE612009B136E /* MockInteractor2.swift */; };
 		BAE4B4222C0CE65A009B136E /* MockNetworkService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B4212C0CE65A009B136E /* MockNetworkService2.swift */; };
-		BAE4B4282C0CE8AC009B136E /* Test1111.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B4272C0CE8AC009B136E /* Test1111.swift */; };
 		BAE4B4302C0CE908009B136E /* CinemaStarViperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B42F2C0CE908009B136E /* CinemaStarViperTest.swift */; };
 		BAE5F8D32C0884C500B74603 /* DetailsFilmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5F8D22C0884C500B74603 /* DetailsFilmPresenter.swift */; };
 		BAE5F8D52C0885E900B74603 /* DetailsFilmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5F8D42C0885E900B74603 /* DetailsFilmInteractor.swift */; };
@@ -156,7 +156,7 @@
 		BAE4B41D2C0CE5E3009B136E /* MockPresenter2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter2.swift; sourceTree = "<group>"; };
 		BAE4B41F2C0CE612009B136E /* MockInteractor2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor2.swift; sourceTree = "<group>"; };
 		BAE4B4212C0CE65A009B136E /* MockNetworkService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService2.swift; sourceTree = "<group>"; };
-		BAE4B4272C0CE8AC009B136E /* Test1111.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1111.swift; sourceTree = "<group>"; };
+		BAE4B4272C0CE8AC009B136E /* ListFilmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmsTests.swift; sourceTree = "<group>"; };
 		BAE4B42D2C0CE908009B136E /* CinemaStarViperTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemaStarViperTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE4B42F2C0CE908009B136E /* CinemaStarViperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaStarViperTest.swift; sourceTree = "<group>"; };
 		BAE5F8D22C0884C500B74603 /* DetailsFilmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFilmPresenter.swift; sourceTree = "<group>"; };
@@ -190,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				BA1FD1142C0CC45800BA90F8 /* MockInteractor.swift */,
-				BAE4B4272C0CE8AC009B136E /* Test1111.swift */,
 				BA1FD10E2C0CB73100BA90F8 /* MockPresenter.swift */,
 				BA1FD1102C0CB7EC00BA90F8 /* MockNetworkService.swift */,
 				BAE4B4212C0CE65A009B136E /* MockNetworkService2.swift */,
@@ -325,7 +324,6 @@
 			children = (
 				BAB826B62C08ED7B00AA11BF /* ShimmerPlaceholderView.swift */,
 				BA0E6DD12C04E2AB0086A383 /* ListFilmsView.swift */,
-				BA1FD10D2C0CB70700BA90F8 /* ListFilmsTestsVIPER */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,6 +453,7 @@
 				BABF4AAD2BD67CC8006A8C03 /* SceneDelegate.swift */,
 				BACE0C4F2BD8187200DA077D /* AppBuilder.swift */,
 				BACE0C582BD81B8900DA077D /* VoidHandler.swift */,
+				BA1FD10D2C0CB70700BA90F8 /* ListFilmsTestsVIPER */,
 				BACE0C512BD8191200DA077D /* Coordinators */,
 				BACE0C3E2BD7D6EC00DA077D /* Extensions */,
 				BA5701872BD79580006C7586 /* Modules */,
@@ -528,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE4B42F2C0CE908009B136E /* CinemaStarViperTest.swift */,
+				BAE4B4272C0CE8AC009B136E /* ListFilmsTests.swift */,
 			);
 			path = CinemaStarViperTest;
 			sourceTree = "<group>";
@@ -796,7 +796,6 @@
 				BABF4AB02BD67CC8006A8C03 /* ListFilmsController.swift in Sources */,
 				BAE4B4222C0CE65A009B136E /* MockNetworkService2.swift in Sources */,
 				BAA7E8C62C0623C900A9BBEF /* ListFilmPresenter.swift in Sources */,
-				BAE4B4282C0CE8AC009B136E /* Test1111.swift in Sources */,
 				BA5701942BD79F1F006C7586 /* RecommendationTableViewCell.swift in Sources */,
 				BA0E6DD82C04FEB50086A383 /* DetailsFilmView.swift in Sources */,
 				BACE0C442BD7D79300DA077D /* LoadServiceProtocol.swift in Sources */,
@@ -855,6 +854,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE4B4302C0CE908009B136E /* CinemaStarViperTest.swift in Sources */,
+				BAA276292C0CFE6600C50CCB /* ListFilmsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
