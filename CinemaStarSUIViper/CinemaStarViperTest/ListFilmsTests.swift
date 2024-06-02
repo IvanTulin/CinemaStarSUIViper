@@ -7,16 +7,16 @@ import Foundation
 import XCTest
 
 final class ListFilmsTests: XCTestCase {
-    var interactor: MockInteractor2!
-    var mockPresenter: MockPresenter2!
-    var mockNetworkService: MockNetworkService2!
+    var interactor: MockInteractorTest!
+    var mockPresenter: MockPresenterTest!
+    var mockNetworkService: MockNetworkServiceTest!
     var cancellables: Set<AnyCancellable>!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        mockPresenter = MockPresenter2()
-        mockNetworkService = MockNetworkService2()
-        interactor = MockInteractor2()
+        mockPresenter = MockPresenterTest()
+        mockNetworkService = MockNetworkServiceTest()
+        interactor = MockInteractorTest()
         interactor.presenter = mockPresenter
         cancellables = []
     }

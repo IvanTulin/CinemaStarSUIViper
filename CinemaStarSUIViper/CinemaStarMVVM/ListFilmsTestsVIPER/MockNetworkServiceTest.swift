@@ -1,10 +1,10 @@
-// MockNetworkService2.swift
+// MockNetworkServiceTest.swift
 // Copyright © RoadMap. All rights reserved.
 
 import Combine
 import Foundation
 
-class MockNetworkService2: NetworkServiceProtocol2 {
+class MockNetworkServiceTest: NetworkServiceProtocol2 {
     var fetchFilmsResult: Result<[FilmsCommonInfo], Error>?
 
     func fetchFilms() -> AnyPublisher<[FilmsCommonInfo], Error> {

@@ -1,10 +1,9 @@
-// MockPresenter.swift
+// MockPresenterTest.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Combine
-import SwiftUI
+import Foundation
 
-class MockPresenter: ListFilmsPresenterProtocol {
+class MockPresenterTest: ListFilmsPresenterProtocol {
     @Published var films: [FilmsCommonInfo] = []
     @Published var error: Error?
 
