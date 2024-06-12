@@ -1,5 +1,5 @@
 // Film+CoreDataClass.swift
-// Copyright © IvanTulin. All rights reserved.
+// Copyright © RoadMap. All rights reserved.
 
 import CoreData
 import Foundation
