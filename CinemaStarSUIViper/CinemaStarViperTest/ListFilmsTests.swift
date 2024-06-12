@@ -1,32 +1,32 @@
-// ListFilmsInteractorTests.swift
+// ListFilmsTests.swift
 // Copyright © RoadMap. All rights reserved.
 
 @testable import CinemaStarMVVM
 import Combine
+import Foundation
 import XCTest
 
-class ListFilmsInteractorTests: XCTestCase {
-    var interactor: MockInteractor!
-    var mockPresenter: MockPresenter!
-    var mockNetworkService: MockNetworkService!
+final class ListFilmsTests: XCTestCase {
+    var interactor: MockInteractorTest!
+    var mockPresenter: MockPresenterTest!
+    var mockNetworkService: MockNetworkServiceTest!
     var cancellables: Set<AnyCancellable>!
 
-    override func setUp() {
-        super.setUp()
-        mockPresenter = MockPresenter()
-        mockNetworkService = MockNetworkService()
-        interactor = MockInteractor()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        mockPresenter = MockPresenterTest()
+        mockNetworkService = MockNetworkServiceTest()
+        interactor = MockInteractorTest()
         interactor.presenter = mockPresenter
         cancellables = []
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         interactor = nil
         mockPresenter = nil
         mockNetworkService = nil
-        // mockCoreDataManager = nil
         cancellables = nil
-        super.tearDown()
+        try super.tearDownWithError()
     }
 
     func testFetchFilmsSuccess() {

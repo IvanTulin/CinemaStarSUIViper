@@ -13,7 +13,7 @@ protocol ListFilmsInteractorProtocol {
 ///
 class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
     weak var presenter: ListFilmsPresenterProtocol?
-    private var networkService = NetworkService2()
+    private var networkService = FilmNetworkService()
     private var cancellable: Set<AnyCancellable> = []
     private let coredataManager = CoreDataManager()
 

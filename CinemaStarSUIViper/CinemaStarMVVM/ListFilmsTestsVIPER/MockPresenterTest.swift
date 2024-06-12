@@ -1,16 +1,14 @@
-// MockPresenter.swift
+// MockPresenterTest.swift
 // Copyright © RoadMap. All rights reserved.
 
-@testable import CinemaStarMVVM
 import Foundation
 
-class MockPresenter: ListFilmsPresenterProtocol {
+class MockPresenterTest: ListFilmsPresenterProtocol {
     @Published var films: [FilmsCommonInfo] = []
     @Published var error: Error?
-    
+
     var didLoadFilmCalled = false
     var didFailWithErrorCalled = false
-    
 
     func didLoadFilm(films: [FilmsCommonInfo]) {
         didLoadFilmCalled = true

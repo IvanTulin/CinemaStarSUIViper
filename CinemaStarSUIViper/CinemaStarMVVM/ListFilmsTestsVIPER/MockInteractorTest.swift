@@ -1,15 +1,13 @@
-// MockInteractor.swift
+// MockInteractorTest.swift
 // Copyright © RoadMap. All rights reserved.
 
-@testable import CinemaStarMVVM
 import Combine
 import SwiftUI
-import XCTest
 
-class MockInteractor: ListFilmsInteractorProtocol, ObservableObject {
-    weak var presenter: MockPresenter?
+class MockInteractorTest: ListFilmsInteractorProtocol, ObservableObject {
+    weak var presenter: MockPresenterTest?
     @Published var films = [FilmsCommonInfo]()
-    private var networkService = NetworkService2()
+    private var networkService = FilmNetworkService()
     private var cancellable: Set<AnyCancellable> = []
 
     func fetchFilms() {

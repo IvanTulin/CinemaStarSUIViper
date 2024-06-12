@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  CinemaStarMVVM
+
+  Created by Ivan Tulin on 02.06.2024.
+  
+*/
+
+"textForTitleLabel" = "Смотри исторические\nфильмы на ";
+"textLabel" = "CINEMA STAR";
+"textFormat" = "%.1f";
+"backButtonName" = "chevron.left";
+"heartButton" = "heart";
+"nameButton" = "Смотреть";
+"actorName" = "Актеры и сьемочная группа";
+"language" = "Язык";
+"seeAlso" = "Смотрите также";
+"textForAlert" = "Функционал в разработке";

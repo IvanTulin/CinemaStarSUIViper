@@ -6,13 +6,6 @@ import SwiftUI
 
 ///
 struct ListFilmsView: View {
-    enum Constants {
-        static let textForTitleLabel = "Смотри исторические\nфильмы на "
-        static let textBoldForTitleLabel = "CINEMA STAR"
-        static let nameFont = "Inter"
-        static let shimmerCellIdentifier = "shimmerCellIdentifier"
-    }
-
     var body: some View {
         NavigationView {
             ZStack {
@@ -54,7 +47,7 @@ struct ListFilmsView: View {
         HStack {
             Text(Constants.textForTitleLabel)
                 +
-                Text(Constants.textBoldForTitleLabel)
+                Text(Constants.textLabel)
                 .bold()
         }
     }
@@ -85,6 +78,7 @@ struct ListFilmsView: View {
                                     .foregroundStyle(.white)
                                     .frame(width: 150, alignment: .leading)
                             }
+                            .frame(height: 65)
                         }
                         .onTapGesture {
                             // presenter.selectedFilmId = String(film.id)

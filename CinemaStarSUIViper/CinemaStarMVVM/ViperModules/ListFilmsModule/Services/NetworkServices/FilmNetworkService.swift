@@ -1,16 +1,16 @@
-// NetworkService2.swift
+// FilmNetworkServiceProtocol.swift
 // Copyright © RoadMap. All rights reserved.
 
 import Combine
 import Foundation
 
 ///
-protocol NetworkServiceProtocol2 {
+protocol FilmNetworkServiceProtocol {
     func fetchFilms() -> AnyPublisher<[FilmsCommonInfo], Error>
 }
 
 /// NetworkService
-final class NetworkService2: NetworkServiceProtocol2 {
+final class FilmNetworkService: FilmNetworkServiceProtocol {
     private var requestCreator = RequestCreator()
 
     func fetchFilms() -> AnyPublisher<[FilmsCommonInfo], Error> {
