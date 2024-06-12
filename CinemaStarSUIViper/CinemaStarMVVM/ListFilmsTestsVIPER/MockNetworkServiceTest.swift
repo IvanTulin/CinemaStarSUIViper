@@ -4,7 +4,7 @@
 import Combine
 import Foundation
 
-class MockNetworkServiceTest: NetworkServiceProtocol2 {
+class MockNetworkServiceTest: FilmNetworkServiceProtocol {
     var fetchFilmsResult: Result<[FilmsCommonInfo], Error>?
 
     func fetchFilms() -> AnyPublisher<[FilmsCommonInfo], Error> {

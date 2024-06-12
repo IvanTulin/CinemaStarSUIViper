@@ -1,5 +1,5 @@
 // RequestCreator.swift
-// Copyright © RoadMap. All rights reserved.
+// Copyright © IvanTulin. All rights reserved.
 
 import Foundation
 

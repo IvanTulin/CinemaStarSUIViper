@@ -1,5 +1,5 @@
 // Strings+Generated.swift
-// Copyright © RoadMap. All rights reserved.
+// Copyright © IvanTulin. All rights reserved.
 
 // swiftlint:disable all
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen

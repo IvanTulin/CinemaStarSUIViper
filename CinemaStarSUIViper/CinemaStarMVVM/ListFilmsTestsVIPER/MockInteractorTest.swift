@@ -7,7 +7,7 @@ import SwiftUI
 class MockInteractorTest: ListFilmsInteractorProtocol, ObservableObject {
     weak var presenter: MockPresenterTest?
     @Published var films = [FilmsCommonInfo]()
-    private var networkService = NetworkService2()
+    private var networkService = FilmNetworkService()
     private var cancellable: Set<AnyCancellable> = []
 
     func fetchFilms() {

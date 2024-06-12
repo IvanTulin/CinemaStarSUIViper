@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BA0E6DD22C04E2AB0086A383 /* ListFilmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E6DD12C04E2AB0086A383 /* ListFilmsView.swift */; };
-		BA0E6DD62C04EA970086A383 /* RequestCreator2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E6DD52C04EA960086A383 /* RequestCreator2.swift */; };
 		BA0E6DD82C04FEB50086A383 /* DetailsFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E6DD72C04FEB50086A383 /* DetailsFilmView.swift */; };
 		BA1F50B42BD8E97100405A77 /* PosterAndRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F50B32BD8E97100405A77 /* PosterAndRatingCell.swift */; };
 		BA3B356F2BD6F3FA001A9F29 /* FilmsCommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B356E2BD6F3FA001A9F29 /* FilmsCommonInfo.swift */; };
@@ -36,7 +35,7 @@
 		BAA276292C0CFE6600C50CCB /* ListFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4B4272C0CE8AC009B136E /* ListFilmsTests.swift */; };
 		BAA7E8C62C0623C900A9BBEF /* ListFilmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8C52C0623C900A9BBEF /* ListFilmPresenter.swift */; };
 		BAA7E8C82C06264000A9BBEF /* ListFilmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8C72C06264000A9BBEF /* ListFilmInteractor.swift */; };
-		BAA7E8CB2C062AF100A9BBEF /* NetworkService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8CA2C062AF100A9BBEF /* NetworkService2.swift */; };
+		BAA7E8CB2C062AF100A9BBEF /* FilmNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8CA2C062AF100A9BBEF /* FilmNetworkService.swift */; };
 		BAA7E8CF2C0652A600A9BBEF /* ListFilmAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8CE2C0652A600A9BBEF /* ListFilmAssembly.swift */; };
 		BAA7E8D12C06530200A9BBEF /* ListFilmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7E8D02C06530200A9BBEF /* ListFilmRouter.swift */; };
 		BAB2E5F12BD9A00800A7952D /* RequestCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2E5F02BD9A00800A7952D /* RequestCreator.swift */; };
@@ -91,7 +90,6 @@
 
 /* Begin PBXFileReference section */
 		BA0E6DD12C04E2AB0086A383 /* ListFilmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmsView.swift; sourceTree = "<group>"; };
-		BA0E6DD52C04EA960086A383 /* RequestCreator2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreator2.swift; sourceTree = "<group>"; };
 		BA0E6DD72C04FEB50086A383 /* DetailsFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFilmView.swift; sourceTree = "<group>"; };
 		BA1F50B32BD8E97100405A77 /* PosterAndRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterAndRatingCell.swift; sourceTree = "<group>"; };
 		BA3B356E2BD6F3FA001A9F29 /* FilmsCommonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsCommonInfo.swift; sourceTree = "<group>"; };
@@ -117,7 +115,7 @@
 		BA9E13CE2BDABDB300AC0DC7 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BAA7E8C52C0623C900A9BBEF /* ListFilmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmPresenter.swift; sourceTree = "<group>"; };
 		BAA7E8C72C06264000A9BBEF /* ListFilmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmInteractor.swift; sourceTree = "<group>"; };
-		BAA7E8CA2C062AF100A9BBEF /* NetworkService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService2.swift; sourceTree = "<group>"; };
+		BAA7E8CA2C062AF100A9BBEF /* FilmNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmNetworkService.swift; sourceTree = "<group>"; };
 		BAA7E8CE2C0652A600A9BBEF /* ListFilmAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmAssembly.swift; sourceTree = "<group>"; };
 		BAA7E8D02C06530200A9BBEF /* ListFilmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmRouter.swift; sourceTree = "<group>"; };
 		BAB2E5F02BD9A00800A7952D /* RequestCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreator.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			children = (
 				BA3B35732BD6F6E2001A9F29 /* NetworkService.swift */,
 				BA6D92182BDD775600DFED7F /* FavoritesService.swift */,
-				BA0E6DD52C04EA960086A383 /* RequestCreator2.swift */,
 				BA9E13C52BDAB39100AC0DC7 /* NetworkServicePOP */,
 				BACE0C452BD7D7CA00DA077D /* LoadingImageService */,
 			);
@@ -357,7 +354,7 @@
 		BAA7E8C92C062A8000A9BBEF /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
-				BAA7E8CA2C062AF100A9BBEF /* NetworkService2.swift */,
+				BAA7E8CA2C062AF100A9BBEF /* FilmNetworkService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -794,7 +791,7 @@
 				BA0E6DD82C04FEB50086A383 /* DetailsFilmView.swift in Sources */,
 				BACE0C442BD7D79300DA077D /* LoadServiceProtocol.swift in Sources */,
 				BABF4AE32BD6A9AD006A8C03 /* FilmCell.swift in Sources */,
-				BAA7E8CB2C062AF100A9BBEF /* NetworkService2.swift in Sources */,
+				BAA7E8CB2C062AF100A9BBEF /* FilmNetworkService.swift in Sources */,
 				BAB826B72C08ED7B00AA11BF /* ShimmerPlaceholderView.swift in Sources */,
 				BAB826B52C08EC0400AA11BF /* ShimmerEffect.swift in Sources */,
 				BAB2E5F42BD9A51C00A7952D /* DetailsFilmDto.swift in Sources */,
@@ -833,7 +830,6 @@
 				BA7567392BDA83B50050FDA9 /* RecommendationCollectionViewCell.swift in Sources */,
 				BAA7E8CF2C0652A600A9BBEF /* ListFilmAssembly.swift in Sources */,
 				BA6D92152BDD580100DFED7F /* UIView + Extension.swift in Sources */,
-				BA0E6DD62C04EA970086A383 /* RequestCreator2.swift in Sources */,
 				BA0E6DD22C04E2AB0086A383 /* ListFilmsView.swift in Sources */,
 				BACE0C422BD7D77100DA077D /* LoadImageService.swift in Sources */,
 				BA9E13CD2BDAB87100AC0DC7 /* NetworkRequest.swift in Sources */,

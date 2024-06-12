@@ -12,7 +12,7 @@ protocol DetailsFilmInteractorProtocol {
 ///
 final class DetailsFilmInteractor: ObservableObject {
     weak var presenter: DetailsFilmPresenter?
-    private var networkService = NetworkService2()
+    private var networkService = FilmNetworkService()
     private var cancellable: Set<AnyCancellable> = []
 }
 
