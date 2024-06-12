@@ -17,6 +17,7 @@ final class ListFilmsPresenter: ObservableObject {
     @Published private var interactor: ListFilmsInteractor?
     // @Published var isLoading = true
 
+    var films: [FilmsCommonInfo]?
     var listFilmView: ListFilmsView?
     var filmsPublisher: AnyPublisher<[FilmsCommonInfo], Never> {
         filmsSubject.eraseToAnyPublisher()
@@ -25,6 +26,7 @@ final class ListFilmsPresenter: ObservableObject {
     private let filmsSubject = PassthroughSubject<[FilmsCommonInfo], Never>()
     private let router: ListFilmsRoutingProtocol
     private var cancellable: Set<AnyCancellable> = []
+    private let coredataManager = CoreDataManager()
 
     init(interactor: ListFilmsInteractor, router: ListFilmsRoutingProtocol) {
         self.router = router
@@ -40,6 +42,7 @@ extension ListFilmsPresenter: ListFilmsPresenterProtocol {
 
     func didLoadFilm(films: [FilmsCommonInfo]) {
         filmsSubject.send(films)
+        // self.films = films
     }
 
     func didSelectFilm(with filmId: Binding<String?>) {

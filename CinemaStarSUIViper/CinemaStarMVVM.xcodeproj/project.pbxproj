@@ -19,6 +19,10 @@
 		BA5701902BD79D38006C7586 /* DetailedDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57018F2BD79D38006C7586 /* DetailedDescriptionCell.swift */; };
 		BA5701922BD79ECB006C7586 /* CastAndCrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5701912BD79ECB006C7586 /* CastAndCrewTableViewCell.swift */; };
 		BA5701942BD79F1F006C7586 /* RecommendationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5701932BD79F1F006C7586 /* RecommendationTableViewCell.swift */; };
+		BA628A342C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA628A322C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodeld */; };
+		BA628A372C0A3B7C0015FC16 /* Film+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA628A352C0A3B7C0015FC16 /* Film+CoreDataClass.swift */; };
+		BA628A382C0A3B7C0015FC16 /* Film+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA628A362C0A3B7C0015FC16 /* Film+CoreDataProperties.swift */; };
+		BA628A3A2C0A3DAD0015FC16 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA628A392C0A3DAD0015FC16 /* CoreDataManager.swift */; };
 		BA6D92112BDD132900DFED7F /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA6D92102BDD132900DFED7F /* KeychainSwift */; };
 		BA6D92132BDD4AC100DFED7F /* ShimmerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D92122BDD4AC100DFED7F /* ShimmerCollectionViewCell.swift */; };
 		BA6D92152BDD580100DFED7F /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D92142BDD580100DFED7F /* UIView + Extension.swift */; };
@@ -110,6 +114,10 @@
 		BA57018F2BD79D38006C7586 /* DetailedDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedDescriptionCell.swift; sourceTree = "<group>"; };
 		BA5701912BD79ECB006C7586 /* CastAndCrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewTableViewCell.swift; sourceTree = "<group>"; };
 		BA5701932BD79F1F006C7586 /* RecommendationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationTableViewCell.swift; sourceTree = "<group>"; };
+		BA628A332C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CinemaStarDataBase.xcdatamodel; sourceTree = "<group>"; };
+		BA628A352C0A3B7C0015FC16 /* Film+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Film+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BA628A362C0A3B7C0015FC16 /* Film+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Film+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA628A392C0A3DAD0015FC16 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BA6D92122BDD4AC100DFED7F /* ShimmerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA6D92142BDD580100DFED7F /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		BA6D92162BDD635400DFED7F /* ShimmerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerTableViewCell.swift; sourceTree = "<group>"; };
@@ -431,6 +439,9 @@
 		BABF4A9F2BD67CC8006A8C03 = {
 			isa = PBXGroup;
 			children = (
+				BA628A352C0A3B7C0015FC16 /* Film+CoreDataClass.swift */,
+				BA628A362C0A3B7C0015FC16 /* Film+CoreDataProperties.swift */,
+				BA628A322C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodeld */,
 				BABF4AAA2BD67CC8006A8C03 /* CinemaStarMVVM */,
 				BABF4AC12BD67CC9006A8C03 /* CinemaStarMVVMTests */,
 				BABF4ACB2BD67CC9006A8C03 /* CinemaStarMVVMUITests */,
@@ -454,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				BABF4AAB2BD67CC8006A8C03 /* AppDelegate.swift */,
+				BA628A392C0A3DAD0015FC16 /* CoreDataManager.swift */,
 				BAA7E8CC2C0650AF00A9BBEF /* Services */,
 				BAE5F8C92C087BBB00B74603 /* ViperModules */,
 				BABF4AAD2BD67CC8006A8C03 /* SceneDelegate.swift */,
@@ -864,6 +876,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACE0C4C2BD80B6E00DA077D /* StateView.swift in Sources */,
+				BA628A382C0A3B7C0015FC16 /* Film+CoreDataProperties.swift in Sources */,
 				BAF40DB32BD97431008B7D1A /* CastAndCrewCollectionViewCell.swift in Sources */,
 				BAA7E8D12C06530200A9BBEF /* ListFilmRouter.swift in Sources */,
 				BAA7E8C82C06264000A9BBEF /* ListFilmInteractor.swift in Sources */,
@@ -882,11 +895,13 @@
 				BAB826B72C08ED7B00AA11BF /* ShimmerPlaceholderView.swift in Sources */,
 				BAB826B52C08EC0400AA11BF /* ShimmerEffect.swift in Sources */,
 				BAB2E5F42BD9A51C00A7952D /* DetailsFilmDto.swift in Sources */,
+				BA628A342C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodeld in Sources */,
 				BACE0C552BD8196500DA077D /* AppCoordinator.swift in Sources */,
 				BA5701902BD79D38006C7586 /* DetailedDescriptionCell.swift in Sources */,
 				BACE0C472BD7D7FC00DA077D /* HandlerImage.swift in Sources */,
 				BACE0C4E2BD80EB200DA077D /* ListFilmsViewModel.swift in Sources */,
 				BAF40DB02BD9599A008B7D1A /* DetailsFilmStateView.swift in Sources */,
+				BA628A3A2C0A3DAD0015FC16 /* CoreDataManager.swift in Sources */,
 				BABF4AAC2BD67CC8006A8C03 /* AppDelegate.swift in Sources */,
 				BAF40DAE2BD94DA9008B7D1A /* DetailsFilmCommonInfo.swift in Sources */,
 				BA3B356F2BD6F3FA001A9F29 /* FilmsCommonInfo.swift in Sources */,
@@ -897,6 +912,7 @@
 				BA5701922BD79ECB006C7586 /* CastAndCrewTableViewCell.swift in Sources */,
 				BACE0C592BD81B8900DA077D /* VoidHandler.swift in Sources */,
 				BACE0C5B2BD8240C00DA077D /* DetailsFilmCoordinator.swift in Sources */,
+				BA628A372C0A3B7C0015FC16 /* Film+CoreDataClass.swift in Sources */,
 				BA6D92132BDD4AC100DFED7F /* ShimmerCollectionViewCell.swift in Sources */,
 				BAE5F8D52C0885E900B74603 /* DetailsFilmInteractor.swift in Sources */,
 				BA3B35742BD6F6E2001A9F29 /* NetworkService.swift in Sources */,
@@ -1331,6 +1347,19 @@
 			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		BA628A322C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA628A332C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodel */,
+			);
+			currentVersion = BA628A332C0A3B000015FC16 /* CinemaStarDataBase.xcdatamodel */;
+			path = CinemaStarDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BABF4AA02BD67CC8006A8C03 /* Project object */;
 }
