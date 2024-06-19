@@ -3,8 +3,8 @@
 
 import Foundation
 
-// Assembly
-class ListFilmsAssembly {
+/// Ассембли
+final class ListFilmsAssembly {
     static func assemble() -> ListFilmsView {
         let interactor = ListFilmsInteractor()
         let router = ListFilmsRouter()

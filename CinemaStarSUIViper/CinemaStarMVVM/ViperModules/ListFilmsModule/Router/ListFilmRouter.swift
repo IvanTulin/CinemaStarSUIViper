@@ -4,13 +4,13 @@
 import Foundation
 import SwiftUI
 
-// Router
+/// Протокол для ListFilmsRouter
 protocol ListFilmsRoutingProtocol {
     func navigateToFilmDetails(withID id: Binding<String?>)
 }
 
-///
-class ListFilmsRouter: ListFilmsRoutingProtocol {
+/// Роутер для перехода на экран DetailsFilmView
+final class ListFilmsRouter: ListFilmsRoutingProtocol {
     var view: ListFilmsView?
     var presenter: ListFilmsPresenter?
 

@@ -4,13 +4,13 @@
 import Combine
 import Foundation
 
-///
+/// Протокол для DetailsFilmPresenter
 protocol DetailsFilmPresenterProtocol: AnyObject {
     func fetchDetailsFilm(id: String)
     func didLoadFilm(film: DetailsFilmCommonInfo)
 }
 
-///
+/// Презентер для Детального экрана фильмов
 final class DetailsFilmPresenter: ObservableObject {
     @Published private var interactor: DetailsFilmInteractor?
 

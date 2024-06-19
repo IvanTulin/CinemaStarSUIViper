@@ -4,17 +4,19 @@
 import Combine
 import Foundation
 
-///
+/// Протокол детального экрана фильмов
 protocol DetailsFilmInteractorProtocol {
     func fetchFilms(id: String)
 }
 
-///
+/// Интерактор для детального экрана фильмов
 final class DetailsFilmInteractor: ObservableObject {
     weak var presenter: DetailsFilmPresenter?
     private var networkService = FilmNetworkService()
     private var cancellable: Set<AnyCancellable> = []
 }
+
+// MARK: - DetailsFilmInteractorProtocol
 
 extension DetailsFilmInteractor: DetailsFilmInteractorProtocol {
     func fetchFilms(id: String) {

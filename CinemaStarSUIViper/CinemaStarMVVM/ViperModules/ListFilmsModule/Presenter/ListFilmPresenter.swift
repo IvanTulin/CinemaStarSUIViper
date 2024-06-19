@@ -5,17 +5,16 @@ import Combine
 import Foundation
 import SwiftUI
 
-///
+/// Протокол для ListFilmsPresenter
 protocol ListFilmsPresenterProtocol: AnyObject {
     func fetchFilms()
     func didLoadFilm(films: [FilmsCommonInfo])
     // var isLoading: Bool { get set }
 }
 
-///
+/// Презентер списка фильмов
 final class ListFilmsPresenter: ObservableObject {
     @Published private var interactor: ListFilmsInteractor?
-    // @Published var isLoading = true
 
     @Published var films: [FilmsCommonInfo]?
     var listFilmView: ListFilmsView?

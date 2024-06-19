@@ -4,6 +4,7 @@
 import Foundation
 import SwiftUI
 
+/// Ассембли для экрана деталей фильма
 final class DetailsFilmAssembly {
     static func assemble(id: Binding<String?>) -> DetailsFilmView {
         let interactor = DetailsFilmInteractor()

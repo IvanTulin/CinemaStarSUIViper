@@ -5,13 +5,13 @@ import Combine
 import CoreData
 import Foundation
 
-// Interactor
+/// Протокол списка фильмов
 protocol ListFilmsInteractorProtocol {
     func fetchFilms()
 }
 
-///
-class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
+/// Интерактор для списка фильмов
+final class ListFilmsInteractor: ListFilmsInteractorProtocol, ObservableObject {
     weak var presenter: ListFilmsPresenterProtocol?
     private var networkService = FilmNetworkService()
     private var cancellable: Set<AnyCancellable> = []

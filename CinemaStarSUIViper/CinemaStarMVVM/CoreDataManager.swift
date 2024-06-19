@@ -15,8 +15,13 @@ class CoreDataManager {
     private var context: NSManagedObjectContext {
         appDelegate.persistentContainer.viewContext
     }
+    
+    
+
+
 
     func saveCinema(cinema: [FilmsCommonInfo]) {
+        
         guard let cinemaEntityDiscription = NSEntityDescription.entity(forEntityName: "Film", in: context)
         else { return }
 
@@ -97,16 +102,3 @@ class CoreDataManager {
 //     }
 }
 
-// class CoreDataManager {
-//    static let shared = CoreDataManager()
-//
-//    private init() {}
-//
-//    private var appDelegate: AppDelegate {
-//        UIApplication.shared.delegate as! AppDelegate
-//    }
-//
-//    private var context: NSManagedObjectContext {
-//        appDelegate.persistentContainer.viewContext
-//    }
-// }

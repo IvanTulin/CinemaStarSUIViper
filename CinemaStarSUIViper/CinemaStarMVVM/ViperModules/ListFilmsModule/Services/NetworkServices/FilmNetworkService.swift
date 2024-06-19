@@ -4,7 +4,7 @@
 import Combine
 import Foundation
 
-///
+/// протокол для NetworkService
 protocol FilmNetworkServiceProtocol {
     func fetchFilms() -> AnyPublisher<[FilmsCommonInfo], Error>
 }
